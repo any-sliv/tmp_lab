@@ -49,9 +49,10 @@ int main(int argc, char *argv[])
 
         // Redirect stdout/printf into the /dev/kmsg file 
         // (it will be possible to print using printk)
-        //freopen ("/dev/kmsg","w",stdout);
+        freopen ("/dev/kmsg","w",stdout);
  
         printf("2");
+
 
         // get architecture specific page size
         unsigned pageSize = sysconf(_SC_PAGESIZE);
@@ -76,7 +77,7 @@ int main(int argc, char *argv[])
         // WRITE YOUR SINGLE LINE COMMAND IN HERE //////////////////////////////
         
         printf("before mapping");
-        mmap(ptr, 4, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+        ptr = mmap(NULL, 4, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
         printf("Mapped");
 
         ////////////////////////////////////////////////////////////////////////
