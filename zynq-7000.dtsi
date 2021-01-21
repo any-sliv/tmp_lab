@@ -62,6 +62,8 @@
 		regulator-always-on;
 	};
 
+
+
 	amba: amba {
 		u-boot,dm-pre-reloc;
 		compatible = "simple-bus";
@@ -69,6 +71,13 @@
 		#size-cells = <1>;
 		interrupt-parent = <&intc>;
 		ranges;
+
+		mymultiplier: mymultiplier@43c00000 {
+			compatible = "generic-uio";
+			reg = <0x43c00000 0x10000>;
+			interrupt-parent = <&intc>;
+			interrupts = <0 52 1>;
+		};
 
 		adc: adc@f8007100 {
 			compatible = "xlnx,zynq-xadc-1.00.a";

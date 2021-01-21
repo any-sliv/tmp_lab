@@ -1,7 +1,0 @@
-//arch = zynq; split = false; format = BIN
-the_ROM_image:
-{
-	[bootloader]/home/masliw/Downloads/FSBL.elf
-	/home/masliw/Downloads/Lab1_SOC_wrapper.bit
-	/home/masliw/Downloads/u-boot.elf
-}
