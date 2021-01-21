@@ -76,7 +76,7 @@
 			compatible = "generic-uio";
 			reg = <0x43c00000 0x10000>;
 			interrupt-parent = <&intc>;
-			interrupts = <0 52 1>;
+			interrupts = <0 59 1>;
 		};
 
 		adc: adc@f8007100 {
