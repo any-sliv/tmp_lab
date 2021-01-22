@@ -76,6 +76,7 @@
 			compatible = "generic-uio";
 			reg = <0x43c00000 0x10000>;
 			interrupt-parent = <&intc>;
+<<<<<<< HEAD
 			interrupts = <0 30 1>;
 		};
 
@@ -84,6 +85,9 @@
 			reg = <0x43c10000 0x10000>;
 			interrupt-parent = <&intc>;
 			interrupts = <0 29 1>;
+=======
+			interrupts = <0 59 1>;
+>>>>>>> master
 		};
 
 		adc: adc@f8007100 {

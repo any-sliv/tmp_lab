@@ -36,6 +36,15 @@ int main()
         // Redirect stdout/printf into the /dev/kmsg file 
         // (it will be possible to print using printk)
         freopen ("/dev/kmsg","w",stdout);
+<<<<<<< HEAD
+=======
+ 
+        printf("2");
+
+
+        // get architecture specific page size
+        unsigned pageSize = sysconf(_SC_PAGESIZE);
+>>>>>>> master
 
         return;
 
@@ -51,6 +60,14 @@ int main()
         *         UIO" section in Lab 3 additional materials for details.    *
         **********************************************************************/
 
+<<<<<<< HEAD
+=======
+        // WRITE YOUR SINGLE LINE COMMAND IN HERE //////////////////////////////
+        
+        printf("before mapping");
+        ptr = mmap(NULL, 4, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+        printf("Mapped");
+>>>>>>> master
 
         ptr = mmap(NULL, 4, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
 
