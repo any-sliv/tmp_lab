@@ -72,16 +72,14 @@
 		interrupt-parent = <&intc>;
 		ranges;
 
-		Filter_IIR:Filter_IIR@43c00000 {
-			compatible = "generic-uio";
-			reg = <0x43c00000 0x10000>;
-			interrupt-parent = <&intc>;
-			interrupts = <0 30 1>;
-		};
-
-		VolumePregain:VolumePregain@43c10000 {
+		Filter_IIR:Filter_IIR@43c10000 {
 			compatible = "generic-uio";
 			reg = <0x43c10000 0x10000>;
+		};
+
+		VolumePregain:VolumePregain@43c00000 {
+			compatible = "generic-uio";
+			reg = <0x43c00000 0x10000>;
 			interrupt-parent = <&intc>;
 			interrupts = <0 29 1>;
 		};
