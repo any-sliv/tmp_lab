@@ -72,16 +72,39 @@
 		interrupt-parent = <&intc>;
 		ranges;
 
-		Filter_IIR:Filter_IIR@43c10000 {
-			compatible = "generic-uio";
-			reg = <0x43c10000 0x10000>;
-		};
-
-		VolumePregain:VolumePregain@43c00000 {
+		VolumePregain0:VolumePregain@43c00000 {
 			compatible = "generic-uio";
 			reg = <0x43c00000 0x10000>;
 			interrupt-parent = <&intc>;
 			interrupts = <0 29 1>;
+		};
+
+		VolumePregain1:VolumePregain@43c20000 {
+			compatible = "generic-uio";
+			reg = <0x43c20000 0x10000>;
+			interrupt-parent = <&intc>;
+			interrupts = <0 31 1>;
+		};
+
+		oled:oled@43c30000
+		{
+			compatible = "generic-uio";
+			reg = < 0x43c30000 0x10000>;
+			interrupt-parent = <&intc>;
+			interrupts = <0 32 1>;
+		};
+
+		axiaudio:axiaudio@43c10000 {
+			compatible = "generic-uio";
+			reg = < 0x43c10000 0x10000>;
+			interrupt-parent = <&intc>;
+			interrupts = <0 30 1>;
+		};
+
+		gpio: gpio@41200000{
+			compatible = "xlnx,xps-gpio-1.00.a";
+			reg = <0x41200000 0x10000>;
+			gpio-controller;
 		};
 
 		adc: adc@f8007100 {
@@ -261,11 +284,6 @@
 			};
 		};
 
-		gpio: gpio@41200000{
-			compatible = "xlnx,xps-gpio-1.00.a";
-			reg = <0x41200000 0x10000>;
-			gpio-controller;
-		};
 
 		gem0: ethernet@e000b000 {
 			compatible = "cdns,zynq-gem", "cdns,gem";
